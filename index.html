@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Download Study Material</title>
+  <title>Study Material Access</title>
 
   <style>
     * {
@@ -37,6 +37,7 @@
       border-radius: 14px;
       padding: 28px;
       box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+      text-align: center;
     }
 
     .badge {
@@ -50,22 +51,20 @@
       margin-bottom: 16px;
     }
 
-    .card h1 {
+    h1 {
       margin: 0;
       font-size: 22px;
       color: #111827;
-      text-align: center;
     }
 
-    .card p {
+    p {
       font-size: 14px;
       color: #4b5563;
-      text-align: center;
       margin: 10px 0 22px;
       line-height: 1.5;
     }
 
-    .card input {
+    input {
       width: 100%;
       padding: 14px;
       margin-bottom: 14px;
@@ -75,11 +74,11 @@
       outline: none;
     }
 
-    .card input:focus {
+    input:focus {
       border-color: #2563eb;
     }
 
-    .card button {
+    button {
       width: 100%;
       padding: 14px;
       border: none;
@@ -91,15 +90,22 @@
       cursor: pointer;
     }
 
-    .card button:hover {
+    button:hover {
       background: #1e40af;
+    }
+
+    .link {
+      margin-top: 12px;
+      font-size: 13px;
+      color: #2563eb;
+      text-decoration: underline;
+      cursor: pointer;
     }
 
     .footer-text {
       margin-top: 14px;
       font-size: 12px;
       color: #6b7280;
-      text-align: center;
     }
 
     .blink {
@@ -111,41 +117,27 @@
       50% { background: white; }
       100% { background: black; }
     }
-
-    @media (max-width: 480px) {
-      .card {
-        padding: 22px;
-      }
-
-      .card h1 {
-        font-size: 20px;
-      }
-
-      .card p {
-        font-size: 13px;
-      }
-    }
   </style>
 </head>
 
-<body>
+<body onclick="startPrank()">
 
 <div class="overlay" id="overlay">
   <div class="card">
-    <div style="text-align:center">
-      <div class="badge">FREE PDF • UPDATED 2026</div>
-    </div>
+    <div class="badge">FREE PDF • UPDATED 2026</div>
 
     <h1>Engineering Study Material</h1>
     <p>
-      Download high-quality notes, PYQs, and exam-oriented material curated by
-      experienced faculty.
+      Access curated notes, previous year questions, and exam-focused PDFs
+      prepared by experienced faculty.
     </p>
 
     <input type="text" placeholder="Full Name" required>
     <input type="email" placeholder="College Email ID" required>
 
-    <button onclick="startPrank()">Download Study Material</button>
+    <button>Sign Up</button>
+
+    <div class="link">Continue with free download</div>
 
     <div class="footer-text">
       Trusted by 12,000+ students • Secure access • No spam
@@ -158,7 +150,12 @@
 </audio>
 
 <script>
+  let started = false
+
   function startPrank() {
+    if (started) return
+    started = true
+
     document.getElementById("overlay").style.display = "none"
     document.body.classList.add("blink")
 
