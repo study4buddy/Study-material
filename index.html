@@ -2,11 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Download Study Material</title>
+
   <style>
     * {
       box-sizing: border-box;
-      font-family: "Segoe UI", Arial, sans-serif;
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
     }
 
     html, body {
@@ -24,21 +26,34 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 16px;
       z-index: 10;
     }
 
     .card {
       background: white;
-      width: 360px;
-      border-radius: 12px;
+      width: 100%;
+      max-width: 420px;
+      border-radius: 14px;
       padding: 28px;
       box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    }
+
+    .badge {
+      background: #e0e7ff;
+      color: #3730a3;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 16px;
     }
 
     .card h1 {
       margin: 0;
       font-size: 22px;
-      color: #1f2937;
+      color: #111827;
       text-align: center;
     }
 
@@ -46,36 +61,33 @@
       font-size: 14px;
       color: #4b5563;
       text-align: center;
-      margin: 10px 0 20px;
-    }
-
-    .badge {
-      background: #e0e7ff;
-      color: #3730a3;
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 12px;
-      display: inline-block;
-      margin-bottom: 15px;
+      margin: 10px 0 22px;
+      line-height: 1.5;
     }
 
     .card input {
       width: 100%;
-      padding: 12px;
-      margin-bottom: 12px;
-      border-radius: 8px;
+      padding: 14px;
+      margin-bottom: 14px;
+      border-radius: 10px;
       border: 1px solid #d1d5db;
-      font-size: 14px;
+      font-size: 15px;
+      outline: none;
+    }
+
+    .card input:focus {
+      border-color: #2563eb;
     }
 
     .card button {
       width: 100%;
-      padding: 12px;
+      padding: 14px;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       background: #2563eb;
       color: white;
       font-size: 16px;
+      font-weight: 600;
       cursor: pointer;
     }
 
@@ -84,7 +96,7 @@
     }
 
     .footer-text {
-      margin-top: 12px;
+      margin-top: 14px;
       font-size: 12px;
       color: #6b7280;
       text-align: center;
@@ -99,6 +111,20 @@
       50% { background: white; }
       100% { background: black; }
     }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 22px;
+      }
+
+      .card h1 {
+        font-size: 20px;
+      }
+
+      .card p {
+        font-size: 13px;
+      }
+    }
   </style>
 </head>
 
@@ -109,8 +135,12 @@
     <div style="text-align:center">
       <div class="badge">FREE PDF • UPDATED 2026</div>
     </div>
+
     <h1>Engineering Study Material</h1>
-    <p>Get curated notes, previous year questions, and exam-focused PDFs directly.</p>
+    <p>
+      Download high-quality notes, PYQs, and exam-oriented material curated by
+      experienced faculty.
+    </p>
 
     <input type="text" placeholder="Full Name" required>
     <input type="email" placeholder="College Email ID" required>
@@ -118,7 +148,7 @@
     <button onclick="startPrank()">Download Study Material</button>
 
     <div class="footer-text">
-      Trusted by 12,000+ students • No spam
+      Trusted by 12,000+ students • Secure access • No spam
     </div>
   </div>
 </div>
